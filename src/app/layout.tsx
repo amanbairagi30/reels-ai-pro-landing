@@ -3,14 +3,15 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const nsBold = localFont({
+  src: "./fonts/neutral_sans_bold.woff2",
+  variable: "--font-ns-bold",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+
+const nsRegular = localFont({
+  src: "./fonts/neutral_sans_regular.woff2",
+  variable: "--font-ns-regular",
   weight: "100 900",
 });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${nsRegular.variable} ${nsBold.variable} font-primary antialiased`}
       >
         <ThemeProvider
           attribute="class"
