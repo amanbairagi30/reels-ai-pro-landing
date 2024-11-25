@@ -2,10 +2,8 @@ import React from "react";
 import Navbar from "./navbar";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { Zap } from "lucide-react";
 import HowItWorksSection from "./working";
 import FAQ from "./faq";
-import { Footer } from "./footer";
 
 export default function Hero() {
   return (
