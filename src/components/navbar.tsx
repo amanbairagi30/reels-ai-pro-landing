@@ -1,32 +1,111 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { SelectTheme } from "./theme-toggler";
+import { Menu, X } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { name: "Generate", href: "#" },
+    { name: "Gallery", href: "#" },
+    { name: "Examples", href: "#" },
+  ];
+
   return (
-    <>
-      <nav className="border-primary flex items-center justify-between">
-        <div className="flex items-center gap-2 w-full h-8">
-          <Image
-            src={"https://www.reelsai.pro/reels-ai-pro-logo.svg"}
-            className="w-8 h-8 object-cover"
-            width={400}
-            height={400}
-            alt="logo"
-          />
-          <span className="text-xl">ReelsAI</span>
+    <nav className="py-4 px-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8">
+            <Image
+              src={"https://www.reelsai.pro/reels-ai-pro-logo.svg"}
+              className="w-full h-full object-cover"
+              width={400}
+              height={400}
+              alt="ReelsAI logo"
+            />
+          </div>
+          <span className="text-xl font-semibold">ReelsAI</span>
         </div>
-        <ul className="flex w-full items-center justify-center gap-6">
-          <li>Generate</li>
-          <li>Gallery</li>
-          <li>Examples</li>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center justify-center gap-6">
+          {navItems.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className="hover:text-primary transition-colors"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
         </ul>
-        <div className="flex w-full items-center justify-end gap-4">
+
+        <div className="hidden md:flex items-center gap-4">
           <Button>Login</Button>
           <SelectTheme />
         </div>
-      </nav>
-    </>
+
+        {/* Mobile Menu */}
+        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <nav className="flex flex-col h-full">
+              <div className="flex items-center justify-between mb-10">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8">
+                    <Image
+                      src={"https://www.reelsai.pro/reels-ai-pro-logo.svg"}
+                      className="w-full h-full object-cover"
+                      width={400}
+                      height={400}
+                      alt="ReelsAI logo"
+                    />
+                  </div>
+                  <span className="text-xl font-semibold mr-2">ReelsAI</span>
+
+                  <SelectTheme />
+                </div>
+                {/* <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <X className="h-6 w-6" />
+                    <span className="sr-only">Close menu</span>
+                  </Button>
+                </SheetTrigger> */}
+              </div>
+              <ul className="flex flex-col gap-4">
+                {navItems.map((item) => (
+                  <li key={item.name}>
+                    <a
+                      href={item.href}
+                      className="text-lg hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto flex flex-col gap-4">
+                <Button onClick={() => setIsMobileMenuOpen(false)}>
+                  Login
+                </Button>
+                <SelectTheme />
+              </div>
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </nav>
   );
 }
