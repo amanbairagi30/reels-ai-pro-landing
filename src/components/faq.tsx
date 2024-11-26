@@ -13,7 +13,7 @@ export default function FAQ() {
       <section className="flex flex-col items-center justify-start mt-[10rem] md:mt-[20rem] mb-10">
         <div className="flex flex-col lg:flex-row items-start w-full flex-wrap gap-4">
           <div className="flex w-full flex-col items-center justify-center">
-            <h1 className="text-3xl text-center md:text-4xl">
+            <h1 className="text-3xl font-bold text-center md:text-4xl">
               Frequently Asked Questions
             </h1>
             <p className="text-sm text-center text-gray-400 md:text-lg my-4">

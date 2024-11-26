@@ -17,10 +17,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="py-4 px-6">
+    <nav className="py-2 z-[10000] rounded-xl backdrop-blur-sm bg-white/5 sticky top-8 border-2 border-foreground/5 mx-auto max-w-4xl px-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8">
+          <div className="w-5 h-5">
             <Image
               src={"https://www.reelsai.pro/reels-ai-pro-logo.svg"}
               className="w-full h-full object-cover"
@@ -38,7 +38,7 @@ export default function Navbar() {
             <li key={item.name}>
               <a
                 href={item.href}
-                className="hover:text-primary transition-colors"
+                className="hover:bg-gradient-to-tr hover:from-primary hover:to-orange-400 hover:bg-clip-text hover:text-transparent transition-colors"
               >
                 {item.name}
               </a>
