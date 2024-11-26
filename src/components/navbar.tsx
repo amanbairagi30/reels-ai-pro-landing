@@ -59,7 +59,10 @@ export default function Navbar() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+          <SheetContent
+            side="right"
+            className="w-[300px] z-[20000] sm:w-[400px]"
+          >
             <nav className="flex flex-col h-full">
               <div className="flex items-center justify-between mb-10">
                 <div className="flex items-center gap-2">

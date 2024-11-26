@@ -46,7 +46,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex bg-accent/50 md:bg-transparent w-full py-4 px-2 rounded-xl text-xs md:text-sm flex-col md:flex-row md:items-center md:justify-center gap-4">
+          <div className="flex bg-accent/50 font-semibold md:bg-transparent w-full py-4 px-2 rounded-xl text-xs md:text-sm flex-col md:flex-row md:items-center md:justify-center gap-4">
             <Link
               className="bg-none transition-all duration-300 hover:text-primary w-fit md:bg-accent/50 px-2 py-1 rounded-lg"
               href={"#"}
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 px-2 md:mt-2 text-xs text-left md:text-center">
+        <div className="mt-8 px-2 md:mt-2 font-semibold text-xs text-left md:text-center">
           © {new Date().getFullYear()} ReelsAI. All rights reserved.
         </div>
       </div>

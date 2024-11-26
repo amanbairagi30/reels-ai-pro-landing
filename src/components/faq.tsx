@@ -22,7 +22,7 @@ export default function FAQ() {
           </div>
         </div>
 
-        <div className="mx-auto mt-20 flex w-full md:w-3/4 flex-wrap">
+        <div className="mx-auto mt-6 md:mt-20 flex w-full md:w-3/4 flex-wrap">
           <Accordion
             type="single"
             collapsible
