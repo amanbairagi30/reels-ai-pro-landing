@@ -103,7 +103,6 @@ export default function Navbar() {
                 <Button onClick={() => setIsMobileMenuOpen(false)}>
                   Login
                 </Button>
-                <SelectTheme />
               </div>
             </nav>
           </SheetContent>

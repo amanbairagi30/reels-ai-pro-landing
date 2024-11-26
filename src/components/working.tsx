@@ -29,25 +29,33 @@ const StepCard = ({
 const HowItWorksSection = () => {
   const steps = [
     {
-      icon: <Zap className="group-hover:text-orange-200 w-6 h-6" />,
+      icon: (
+        <Zap className="group-hover:text-primary dark:group-hover:text-orange-200 w-6 h-6" />
+      ),
       title: "Provide Product Info",
       description:
         "Provide your product link or describe & upload assets, and we'll analyze it to ensure the best outcomes for your ad campaigns.",
     },
     {
-      icon: <Clapperboard className="group-hover:text-orange-200 w-6 h-6" />,
+      icon: (
+        <Clapperboard className="group-hover:text-primary dark:group-hover:text-orange-200 w-6 h-6" />
+      ),
       title: "AI Script Generation",
       description:
         "Our AI generates engaging scripts for your ad based on the provided information, ensuring relevance and creativity.",
     },
     {
-      icon: <User className="group-hover:text-orange-200 w-6 h-6" />,
+      icon: (
+        <User className="group-hover:text-primary dark:group-hover:text-orange-200 w-6 h-6" />
+      ),
       title: "Select Actor & Voice",
       description:
         "Choose an actor and voice for your ad that aligns with your brand's tone and enhances its storytelling impact.",
     },
     {
-      icon: <WandSparkles className="group-hover:text-orange-200 w-6 h-6" />,
+      icon: (
+        <WandSparkles className="group-hover:text-primary dark:group-hover:text-orange-200 w-6 h-6" />
+      ),
       title: "Render & Export",
       description:
         "Render the video and get automatically edited outputs ready for use on various platforms with minimal effort.",
@@ -56,7 +64,7 @@ const HowItWorksSection = () => {
 
   return (
     <section className="relative flex items-center justify-start mt-[10rem] md:mt-[20rem] mb-10">
-      <div className="top-[0rem] left-[-20%] z-[-1] absolute bg-gradient-to-t opacity-20 dark:md:opacity-50 from-primary to-yellow-800  blur-[12em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out size-[40rem]"></div>
+      <div className="top-[0rem] left-[-20%] z-[-1] absolute bg-gradient-to-t hidden md:block opacity-20 dark:md:opacity-50 from-primary to-yellow-800  blur-[12em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out size-[40rem]"></div>
       <div className="flex flex-col lg:flex-row items-start w-full flex-wrap gap-4">
         <div className="flex w-full lg:max-w-[50%] flex-col lg:sticky top-40">
           <h1 className="text-3xl font-bold text-center md:text-left md:text-4xl">
